@@ -5,24 +5,25 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-const minHeight = 5
-const width = 50
-const padding = 2
+const minHeight = 12
+const width = 60
+const verticalPadding = minHeight/2 - 1
+const horizontalPadding = 2
 
 var renderer, _ = glamour.NewTermRenderer(
 	glamour.WithAutoStyle(),
-	glamour.WithWordWrap(width-padding*2),
+	glamour.WithWordWrap(width-horizontalPadding*2),
 )
 
 var termStyle = lipgloss.NewStyle().
-	Align(lipgloss.Center).
 	Border(lipgloss.RoundedBorder(), true).
+	Align(lipgloss.Center).
 	Height(minHeight).
 	Width(width).
-	Padding(padding)
+	Padding(verticalPadding, horizontalPadding)
 
 var definitionStyle = lipgloss.NewStyle().
 	Border(lipgloss.RoundedBorder(), true).
 	Height(minHeight).
 	Width(width).
-	Padding(0, padding)
+	Padding(0, horizontalPadding)
