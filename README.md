@@ -3,7 +3,7 @@
 Cue cards in your terminal.
 
 <p align="center">
-  <img src="./cue.png?raw=true" alt="Cue cards" />
+  <img src="./cue.gif?raw=true" alt="Cue cards" />
 </p>
 
 ### Usage
