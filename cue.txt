@@ -1,3 +1,4 @@
-Press Spacebar: You can flip a card by pressing spacebar. Go to the next card by pressing the right arrow key or `L`.
-Usage: Give `cue` a list of terms and definitions together separated by a colon or specify your own `--delimeter`.
-Cue: Study for your next exam on the command-line with `cue < cards.txt`.
+Press Spacebar: You can flip a card by pressing spacebar. Navigate with arrow keys or hl.
+Usage: Give `cue` a list of terms and definitions together separated by a colon.
+Cue: Study for your next exam on the command-line with **cue < cards.txt**.
+Markdown Support: *You* can even write in **markdown**.
