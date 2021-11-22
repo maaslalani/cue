@@ -6,7 +6,7 @@ import (
 )
 
 const minHeight = 12
-const width = 60
+const width = 50
 const verticalPadding = minHeight/2 - 1
 const horizontalPadding = 2
 
