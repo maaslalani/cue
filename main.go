@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"strings"
 
@@ -44,9 +45,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (m model) View() string {
 	var b strings.Builder
 
-	sides := strings.Split(m.cards[m.paginator.Page], delimiter)
-	term, definition := sides[0], sides[1]
-
+	term, definition := m.parseCard()
 	// Display the correct side of the cue card based on whether or not the user
 	// has flipped the card
 	if m.flipped {
@@ -62,6 +61,18 @@ func (m model) View() string {
 	b.WriteString("\n\n")
 	b.WriteString("  " + m.paginator.View())
 	return b.String()
+}
+
+func (m model) parseCard() (string, string) {
+	raw := m.cards[m.paginator.Page]
+	error_msg := fmt.Sprintf("Content of this card [%s] is invalid!", raw)
+	const advice = "1. The card shouldn't be empty; 2. The card should have a ':'."
+	if !strings.Contains(raw, ":") {
+		return error_msg, advice
+	}
+	sides := strings.Split(raw, delimiter)
+	term, definition := sides[0], sides[1]
+	return term, definition
 }
 
 func main() {
